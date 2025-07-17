@@ -37,15 +37,17 @@
                     <div class="job-card-header">
                         <div>
                             <h2 class="job-card-title">{{ $job->title }}</h2>
-                            <p class="job-card-company">{{ $job->user->name }} • {{ $job->location }}</p>
+                            <p class="job-card-company">{{ $job->user->name??"" }} • {{ $job->location }}</p>
                         </div>
                         <a href="#" class="nav-button-primary">Lihat Detail</a>
                     </div>
                     <div class="job-tags">
                         <span class="job-tag">{{ $job->type }}</span>
+                        @if($job->job!=null)
                         @foreach ($job->tags as $tag)
                             <span class="job-tag">{{ $tag }}</span>
                         @endforeach
+                        @endif
                         @if($job->deadline)
                             <span class="job-tag" style="background-color: #0E7490; color: var(--text-primary);">Tenggat: {{ $job->deadline->format('d M Y') }}</span>
                         @endif
