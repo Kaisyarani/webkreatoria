@@ -75,7 +75,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/posts/{post}/edit', [PostController::class, 'edit'])->name('posts.edit');
     Route::patch('/posts/{post}', [PostController::class, 'update'])->name('posts.update');
     Route::get('/chat/{user}', [ChatController::class, 'chatWith'])->name('chat.with');
-    Route::get('/chat/room/{receiverId}', ChatRoom::class)->name('chat');
+    Route::get('/chat/room/{receiverId}', ChatRoom::class)->name('chatroom');
      Route::get('/chat', ChatList::class)->name('chat.list');
      Route::get('/chat', [MessageController::class, 'index'])->middleware('auth')->name('chat');
 Route::post('/chat/send', [MessageController::class, 'store'])->middleware('auth')->name('chat.send');
