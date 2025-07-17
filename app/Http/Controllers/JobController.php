@@ -20,9 +20,9 @@ namespace App\Http\Controllers;
             if (Auth::check()) {
                 // Jika sudah login, periksa perannya
                 if (Auth::user()->account_type == 'kreator') {
-                    return view('jobs.kreator', ['jobs' => $jobs]);
+                    return view('Jobs.kreator', ['jobs' => $jobs]);
                 } elseif (Auth::user()->account_type == 'perusahaan') {
-                    return view('jobs.perusahaan', ['jobs' => $jobs]);
+                    return view('Jobs.perusahaan', ['jobs' => $jobs]);
                 }
             }
 
